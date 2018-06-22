@@ -12,8 +12,9 @@ export class HomePage {
   constructor(private iab: InAppBrowser) {}
 
   openUrl() {
-      if (!this.port || this.port) {
+      if (!this.port || !this.port) {
           alert('Informe host e porta');
+          return;
       }
       const browser = this.iab.create(
           'http://' + this.host + ':' + this.port,
